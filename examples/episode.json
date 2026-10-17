@@ -1,0 +1,11 @@
+{
+ "id": "E00",
+ "title": "animkit self-test set",
+ "storyboard": "storyboard.md",
+ "shots": [
+  {"id": "S01", "script": "epipolar.py", "size": "M"},
+  {"id": "S02", "script": "tensor_demo.py", "size": "M"},
+  {"id": "S03", "script": "p0_demo.py", "size": "L"},
+  {"id": "S04", "script": "p1_demo.py", "size": "M"}
+ ]
+}

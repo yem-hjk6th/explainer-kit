@@ -1,0 +1,12 @@
+{
+ "_note": "Copy to config/animkit.json (git-ignored, one per checkout) or run `python tools/setup_config.py`, which detects fonts and ffmpeg. Paths are absolute paths on YOUR machine. math_python: a python that has matplotlib; null = the interpreter running the render. ffmpeg: null = PATH / conda env / imageio-ffmpeg. Optional: text_<code> / bold_<code> fonts for a translated render (--lang <code>) in a script the Latin fonts lack.",
+ "math_python": null,
+ "ffmpeg": null,
+ "fonts": {
+  "text": "<Latin regular, default for labels and captions: segoeui.ttf, Arial.ttf, DejaVuSans.ttf>",
+  "bold": "<Latin bold, titles and headers: segoeuib.ttf, Arial Bold.ttf, DejaVuSans-Bold.ttf>",
+  "light": "<Latin light face for years, numbers, small labels: segoeuil.ttf, DejaVuSans-ExtraLight.ttf>",
+  "math": "<serif italic for symbols drawn as text: cambriai.ttf, DejaVuSerif-Italic.ttf>",
+  "math_up": "<serif upright: cambria.ttc, DejaVuSerif.ttf>"
+ }
+}

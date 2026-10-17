@@ -1,0 +1,16 @@
+{
+ "id": "E01pre",
+ "title": "E01 VGGT × MapAnything · English pre version (≤ 5 min)",
+ "storyboard": "storyboard_pre.md",
+ "shots": [
+  {"id": "PRE-0", "script": "shots/c0_open.py", "size": "S"},
+  {"id": "PRE-1", "script": "shots/c1_vggt.py", "size": "S"},
+  {"id": "PRE-2", "script": "shots/p1_vggt.py", "size": "L"},
+  {"id": "PRE-3", "script": "shots/c2_mapanything.py", "size": "S"},
+  {"id": "PRE-4", "script": "shots/p2_mapanything.py", "size": "L"},
+  {"id": "PRE-5", "script": "shots/c3_compare.py", "size": "S"},
+  {"id": "PRE-6", "script": "shots/p3_compare.py", "size": "M"},
+  {"id": "PRE-7", "script": "shots/c4_test.py", "size": "S"},
+  {"id": "PRE-8", "script": "shots/p4_our_test.py", "size": "M"}
+ ]
+}

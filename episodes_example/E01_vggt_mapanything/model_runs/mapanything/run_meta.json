@@ -1,0 +1,50 @@
+{
+  "model": "facebook/map-anything (CC-BY-NC 4.0)",
+  "code": "facebookresearch/map-anything 3d10cf7",
+  "image_hw": [
+    518,
+    518
+  ],
+  "load_s": 9.92,
+  "gpu": "GPU",
+  "torch": "2.11.0+cu128",
+  "runs": {
+    "A": {
+      "inputs": [],
+      "infer_s": 0.629,
+      "peak_alloc_gib": 6.304,
+      "metric_scaling_factor": [
+        2.5172998905181885,
+        2.5172998905181885,
+        2.5172998905181885
+      ]
+    },
+    "B": {
+      "inputs": [
+        "intrinsics"
+      ],
+      "infer_s": 0.22,
+      "peak_alloc_gib": 6.366,
+      "metric_scaling_factor": [
+        2.553999900817871,
+        2.553999900817871,
+        2.553999900817871
+      ]
+    },
+    "C": {
+      "inputs": [
+        "camera_poses",
+        "intrinsics",
+        "is_metric_scale"
+      ],
+      "infer_s": 0.287,
+      "peak_alloc_gib": 6.366,
+      "metric_scaling_factor": [
+        1.6274000406265259,
+        1.6274000406265259,
+        1.6274000406265259
+      ]
+    }
+  },
+  "time": null
+}

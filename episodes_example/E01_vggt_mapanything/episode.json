@@ -1,0 +1,17 @@
+{
+  "id": "E01",
+  "title": "VGGT × MapAnything: several images → cameras, depth, point cloud",
+  "storyboard": "storyboard.md",
+  "shots": [
+    {"id": "E01-01", "script": "shots/s01_task.py", "size": "S"},
+    {"id": "E01-02", "script": "shots/s02_patchify.py", "size": "S"},
+    {"id": "E01-03", "script": "shots/s03_tokens.py", "size": "S"},
+    {"id": "E01-04", "script": "shots/s04_alt_attn.py", "size": "M"},
+    {"id": "E01-05", "script": "shots/s05_heads.py", "size": "M"},
+    {"id": "E01-06", "script": "shots/s06_two_routes.py", "size": "S"},
+    {"id": "E01-07", "script": "shots/s07_vggt_full.py", "size": "L"},
+    {"id": "E01-08", "script": "shots/s08_mapanything.py", "size": "M"},
+    {"id": "E01-09", "script": "shots/s09_ma_inputs.py", "size": "M"},
+    {"id": "E01-10", "script": "shots/s10_compare.py", "size": "S"}
+  ]
+}

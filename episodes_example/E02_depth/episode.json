@@ -1,0 +1,17 @@
+{
+  "id": "E02",
+  "title": "Depth: Depth Pro × Depth Anything 3",
+  "storyboard": "storyboard.md",
+  "shots": [
+    {"id": "E02-01", "script": "shots/s01_intro.py", "size": "S"},
+    {"id": "E02-02", "script": "shots/s02_depth_disp.py", "size": "M"},
+    {"id": "E02-03", "script": "shots/s03_scale_align.py", "size": "M"},
+    {"id": "E02-04", "script": "shots/s04_dp_tiles.py", "size": "M"},
+    {"id": "E02-05", "script": "shots/s05_dp_metric_fov.py", "size": "M"},
+    {"id": "E02-06", "script": "shots/s06_dp_train.py", "size": "M"},
+    {"id": "E02-07", "script": "shots/s07_da3_ray.py", "size": "M"},
+    {"id": "E02-08", "script": "shots/s08_da3_tokens.py", "size": "M"},
+    {"id": "E02-09", "script": "shots/s09_da3_train.py", "size": "M"},
+    {"id": "E02-10", "script": "shots/s10_compare.py", "size": "S"}
+  ]
+}

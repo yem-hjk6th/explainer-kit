@@ -1,0 +1,7 @@
+{
+  "id": "E01-04demo",
+  "title": "i18n demo: E01-04 in Spanish",
+  "shots": [
+    {"id": "E01-04", "script": "s04_alt_attn.py", "size": "M"}
+  ]
+}

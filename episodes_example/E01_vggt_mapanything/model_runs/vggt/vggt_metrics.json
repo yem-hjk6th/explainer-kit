@@ -1,0 +1,226 @@
+{
+ "units": "normalized: 1 = s = 2.1525 m (mean distance of GT points to camera 1)",
+ "cameras": [
+  {
+   "cam": 1,
+   "rot_err_deg": 0.0,
+   "t_pred": [
+    0.0,
+    9.999999747378752e-05,
+    -0.0003000000142492354
+   ],
+   "t_gt_over_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "t_err": 0.0003,
+   "t_dir_err_deg": null,
+   "fov_pred_deg": [
+    57.96200180053711,
+    57.74399948120117
+   ],
+   "fov_gt_deg": [
+    60.0,
+    60.0
+   ],
+   "q_pred_xyzw": [
+    -0.0,
+    -9.999999747378752e-05,
+    -0.0,
+    0.9998999834060669
+   ]
+  },
+  {
+   "cam": 2,
+   "rot_err_deg": 0.895,
+   "t_pred": [
+    0.5491999983787537,
+    -0.0430000014603138,
+    0.14560000598430634
+   ],
+   "t_gt_over_s": [
+    0.5385,
+    -0.0373,
+    0.1394
+   ],
+   "t_err": 0.0137,
+   "t_dir_err_deg": 0.597,
+   "fov_pred_deg": [
+    57.74599838256836,
+    57.54800033569336
+   ],
+   "fov_gt_deg": [
+    60.0,
+    60.0
+   ],
+   "q_pred_xyzw": [
+    -0.0013000000035390258,
+    -0.2572999894618988,
+    -0.06769999861717224,
+    0.9635999798774719
+   ]
+  },
+  {
+   "cam": 3,
+   "rot_err_deg": 0.643,
+   "t_pred": [
+    -0.5453000068664551,
+    -0.0406000018119812,
+    0.14499999582767487
+   ],
+   "t_gt_over_s": [
+    -0.5385,
+    -0.0373,
+    0.1394
+   ],
+   "t_err": 0.0094,
+   "t_dir_err_deg": 0.471,
+   "fov_pred_deg": [
+    57.604000091552734,
+    57.33700180053711
+   ],
+   "fov_gt_deg": [
+    60.0,
+    60.0
+   ],
+   "q_pred_xyzw": [
+    -0.0,
+    0.2549999952316284,
+    0.06909999996423721,
+    0.9645000100135803
+   ]
+  }
+ ],
+ "depth": [
+  {
+   "cam": 1,
+   "n_valid": 114147,
+   "abs_rel": 0.0204,
+   "median_ratio_pred_over_gt": 1.0145
+  },
+  {
+   "cam": 2,
+   "n_valid": 123156,
+   "abs_rel": 0.0196,
+   "median_ratio_pred_over_gt": 1.0162
+  },
+  {
+   "cam": 3,
+   "n_valid": 126615,
+   "abs_rel": 0.0222,
+   "median_ratio_pred_over_gt": 1.0188
+  }
+ ],
+ "points": {
+  "point_head": {
+   "mean": 0.0247,
+   "median": 0.0241,
+   "aligned_mean": 0.0075,
+   "aligned_median": 0.0053,
+   "sim3_scale": 1.0565,
+   "mean_norm_pred": 1.0014
+  },
+  "depth_plus_camera": {
+   "mean": 0.0219,
+   "median": 0.0224,
+   "aligned_mean": 0.0077,
+   "aligned_median": 0.0061,
+   "sim3_scale": 1.046,
+   "mean_norm_pred": 1.0046
+  },
+  "n_points": 363918,
+  "mean_norm_gt": 1.0
+ },
+ "white_dot": {
+  "uv": [
+   239.739,
+   296.602
+  ],
+  "depth_gt": 0.9177,
+  "depth_pred": 0.9252,
+  "point_head": [
+   -0.1314,
+   0.0611,
+   0.9706
+  ],
+  "depth_cam": [
+   -0.1321,
+   0.0642,
+   0.9718
+  ],
+  "gt": [
+   -0.1394,
+   0.0645,
+   0.9639
+  ],
+  "depth_conf": 25.204
+ },
+ "track_white_dot": [
+  {
+   "frame": 1,
+   "gt": [
+    194.14,
+    289.03
+   ],
+   "pred": [
+    194.13999938964844,
+    289.0299987792969
+   ],
+   "err_px": 0.0,
+   "vis": 1.0
+  },
+  {
+   "frame": 2,
+   "gt": [
+    239.74,
+    296.6
+   ],
+   "pred": [
+    237.75,
+    297.6700134277344
+   ],
+   "err_px": 2.26,
+   "vis": 0.992
+  },
+  {
+   "frame": 3,
+   "gt": [
+    172.88,
+    276.41
+   ],
+   "pred": [
+    173.74000549316406,
+    277.29998779296875
+   ],
+   "err_px": 1.233,
+   "vis": 0.992
+  }
+ ],
+ "depth_conf_vs_error": [
+  {
+   "cam": 1,
+   "conf_min": 1.004,
+   "conf_median": 23.996,
+   "conf_max": 29.735,
+   "abs_rel_high_conf_half": 0.0206,
+   "abs_rel_low_conf_half": 0.0201
+  },
+  {
+   "cam": 2,
+   "conf_min": 1.001,
+   "conf_median": 21.69,
+   "conf_max": 25.749,
+   "abs_rel_high_conf_half": 0.0223,
+   "abs_rel_low_conf_half": 0.0169
+  },
+  {
+   "cam": 3,
+   "conf_min": 1.001,
+   "conf_median": 20.871,
+   "conf_max": 24.167,
+   "abs_rel_high_conf_half": 0.0284,
+   "abs_rel_low_conf_half": 0.016
+  }
+ ]
+}

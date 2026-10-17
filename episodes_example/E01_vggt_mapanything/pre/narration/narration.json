@@ -1,0 +1,963 @@
+[
+ {
+  "id": "c0",
+  "t0": 0.0,
+  "t1": 3.0,
+  "on_screen": "Title card: VGGT × MapAnything, four-part outline.",
+  "why": "Opens the talk and names the two models.",
+  "key_points": [
+   "Four parts: VGGT, MapAnything, side by side, our own test."
+  ],
+  "text": "VGGT and MapAnything.",
+  "words": 5,
+  "max_words": 5,
+  "tts": "V G G T and MapAnything.",
+  "sentences": [
+   {
+    "text": "VGGT and MapAnything.",
+    "tts": "V G G T and MapAnything.",
+    "words": 5,
+    "anchor": 0.0
+   }
+  ],
+  "hint": "Opening card: say the two names and move on; no need to read the outline."
+ },
+ {
+  "id": "c1",
+  "t0": 3.0,
+  "t1": 5.0,
+  "on_screen": "Part 1 card: How VGGT works (Wang et al., CVPR 2025).",
+  "why": "Part 1 covers only the VGGT paper's architecture.",
+  "key_points": [
+   "Paper architecture only; our own numbers wait until Part 4."
+  ],
+  "text": "First, VGGT.",
+  "words": 3,
+  "max_words": 3,
+  "tts": "First, V G G T.",
+  "sentences": [
+   {
+    "text": "First, VGGT.",
+    "tts": "First, V G G T.",
+    "words": 3,
+    "anchor": 3.0
+   }
+  ],
+  "hint": "Part 1 covers only the VGGT paper's architecture; all numbers measured on our test scene wait until Part 4."
+ },
+ {
+  "id": "p1.1",
+  "t0": 5.0,
+  "t1": 10.0,
+  "on_screen": "Eq. (1): N images in, four outputs per image, in one forward pass.",
+  "why": "Sets the input / output contract that the rest of Part 1 unpacks.",
+  "key_points": [
+   "Eq. (1): N images → (g, D, P, T) for each image."
+  ],
+  "text": "One forward pass: images in, four outputs per image.",
+  "words": 9,
+  "max_words": 9,
+  "tts": "One forward pass: images in, four outputs per image.",
+  "sentences": [
+   {
+    "text": "One forward pass: images in, four outputs per image.",
+    "tts": "One forward pass: images in, four outputs per image.",
+    "words": 9,
+    "anchor": 5.0
+   }
+  ],
+  "hint": "Eq. (1): N images in, four outputs g, D, P, T per image, in one forward pass."
+ },
+ {
+  "id": "p1.2",
+  "t0": 10.0,
+  "t1": 20.0,
+  "on_screen": "The four outputs: camera g, depth map D, point map P, tracking features T.",
+  "why": "These four outputs are what the rest of Part 1 explains.",
+  "key_points": [
+   "P is expressed in camera 1's frame.",
+   "The pictures are real VGGT-1B output on our test images; the numbers come in Part 4."
+  ],
+  "text": "Camera g, depth D. Point map P, in camera one's frame. Tracking features T.",
+  "words": 14,
+  "max_words": 20,
+  "tts": "Camera g, depth D. Point map P, in camera one's frame. Tracking features T.",
+  "sentences": [
+   {
+    "text": "Camera g, depth D.",
+    "tts": "Camera g, depth D.",
+    "words": 4,
+    "anchor": 10.0
+   },
+   {
+    "text": "Point map P, in camera one's frame.",
+    "tts": "Point map P, in camera one's frame.",
+    "words": 7,
+    "anchor": 14.8
+   },
+   {
+    "text": "Tracking features T.",
+    "tts": "Tracking features T.",
+    "words": 3,
+    "anchor": 17.2
+   }
+  ],
+  "hint": "The four outputs; P is in camera 1's coordinate frame. The depth maps and point clouds on screen are real model output; the numbers come in Part 4."
+ },
+ {
+  "id": "p1.3",
+  "t0": 20.0,
+  "t1": 30.25,
+  "on_screen": "Each image → 1369 DINOv2 patch tokens (1024-d), plus 5 extra tokens: 1 camera, 4 register.",
+  "why": "Before attention, we need to know what the tokens are.",
+  "key_points": [
+   "DINOv2 (ViT-L): 37 × 37 = 1369 patch tokens, 1024-d.",
+   "The camera token collects camera info; the 4 register tokens are dropped at the end."
+  ],
+  "text": "Each image becomes DINOv2 patch tokens, plus five extras. One of the extras is the camera token.",
+  "words": 19,
+  "max_words": 20,
+  "tts": "Each image becomes DINO v2 patch tokens, plus five extras. One of the extras is the camera token.",
+  "sentences": [
+   {
+    "text": "Each image becomes DINOv2 patch tokens, plus five extras.",
+    "tts": "Each image becomes DINO v2 patch tokens, plus five extras.",
+    "words": 11,
+    "anchor": 20.0
+   },
+   {
+    "text": "One of the extras is the camera token.",
+    "tts": "One of the extras is the camera token.",
+    "words": 8,
+    "anchor": 25.05
+   }
+  ],
+  "hint": "Each image = 1369 patch tokens + 1 camera token + 4 register tokens; the camera token later turns into the camera parameters."
+ },
+ {
+  "id": "p1.4",
+  "t0": 30.25,
+  "t1": 37.25,
+  "on_screen": "Example token #799; image 1 gets its own camera / register tokens → the reference camera.",
+  "why": "Explains why P lives in camera 1's frame.",
+  "key_points": [
+   "Image 1 uses its own camera / register tokens; the other images share one set.",
+   "That is how the network knows which camera is the reference."
+  ],
+  "text": "Just an example token. Image one gets its own extra tokens, which mark it as the reference.",
+  "words": 17,
+  "max_words": 14,
+  "tts": "Just an example token. Image one gets its own extra tokens, which mark it as the reference.",
+  "sentences": [
+   {
+    "text": "Just an example token.",
+    "tts": "Just an example token.",
+    "words": 4,
+    "anchor": 30.25
+   },
+   {
+    "text": "Image one gets its own extra tokens, which mark it as the reference.",
+    "tts": "Image one gets its own extra tokens, which mark it as the reference.",
+    "words": 13,
+    "anchor": 32.85
+   }
+  ],
+  "hint": "Frame 1 uses its own set of camera / register tokens, so the network knows which camera is the reference. #799 is just an example token."
+ },
+ {
+  "id": "p1.5",
+  "t0": 37.25,
+  "t1": 47.35,
+  "on_screen": "Tokens of the 3 images as 3 rows; frame attention on each row alone; shape (3, 1374, 1024).",
+  "why": "Alternating attention is the core of VGGT; this is its first half.",
+  "key_points": [
+   "Frame attention: tokens attend only within their own image.",
+   "Shape (3, 1374, 1024), with 1374 = 1 + 4 + 1369."
+  ],
+  "text": "The core of VGGT is alternating attention. Frame attention keeps each image's row separate. Then we join the rows.",
+  "words": 20,
+  "max_words": 20,
+  "tts": "The core of V G G T is alternating attention. Frame attention keeps each image's row separate. Then we join the rows.",
+  "sentences": [
+   {
+    "text": "The core of VGGT is alternating attention.",
+    "tts": "The core of V G G T is alternating attention.",
+    "words": 8,
+    "anchor": 37.25
+   },
+   {
+    "text": "Frame attention keeps each image's row separate.",
+    "tts": "Frame attention keeps each image's row separate.",
+    "words": 7,
+    "anchor": 39.75
+   },
+   {
+    "text": "Then we join the rows.",
+    "tts": "Then we join the rows.",
+    "words": 5,
+    "anchor": 44.55
+   }
+  ],
+  "hint": "First half of alternating attention: frame attention runs on each image on its own, shape (3, 1374, 1024); then the three rows are joined end to end."
+ },
+ {
+  "id": "p1.6",
+  "t0": 47.35,
+  "t1": 52.0,
+  "on_screen": "Global attention over one sequence; shape (1, 4122, 1024).",
+  "why": "The second half lets tokens from different images interact.",
+  "key_points": [
+   "Same tokens, only reshaped: 3 × 1374 = 4122."
+  ],
+  "text": "Global attention sees one long sequence: every token from every image. Same tokens, just reshaped.",
+  "words": 15,
+  "max_words": 9,
+  "tts": "Global attention sees one long sequence: every token from every image. Same tokens, just reshaped.",
+  "sentences": [
+   {
+    "text": "Global attention sees one long sequence: every token from every image.",
+    "tts": "Global attention sees one long sequence: every token from every image.",
+    "words": 11,
+    "anchor": 47.35
+   },
+   {
+    "text": "Same tokens, just reshaped.",
+    "tts": "Same tokens, just reshaped.",
+    "words": 4,
+    "anchor": 49.8
+   }
+  ],
+  "hint": "Global attention: the tokens of the three images form one sequence of length 4122; it is only a reshape, the tokens themselves do not change."
+ },
+ {
+  "id": "p1.7",
+  "t0": 52.0,
+  "t1": 59.45,
+  "on_screen": "Attention table: frame = 3 diagonal blocks, global = whole table; paper Tab. 5.",
+  "why": "Shows what each attention type can see, and why VGGT alternates.",
+  "key_points": [
+   "Paper Tab. 5: at the same parameter count, alternating has the lowest error."
+  ],
+  "text": "Frame attention fills only the diagonal blocks. Global attention fills the whole table. In Table 5, alternating has the lowest error at the same parameter count.",
+  "words": 26,
+  "max_words": 14,
+  "tts": "Frame attention fills only the diagonal blocks. Global attention fills the whole table. In Table five, alternating has the lowest error at the same parameter count.",
+  "sentences": [
+   {
+    "text": "Frame attention fills only the diagonal blocks.",
+    "tts": "Frame attention fills only the diagonal blocks.",
+    "words": 7,
+    "anchor": 52.0
+   },
+   {
+    "text": "Global attention fills the whole table.",
+    "tts": "Global attention fills the whole table.",
+    "words": 6,
+    "anchor": 54.2
+   },
+   {
+    "text": "In Table 5, alternating has the lowest error at the same parameter count.",
+    "tts": "In Table five, alternating has the lowest error at the same parameter count.",
+    "words": 13,
+    "anchor": 56.8
+   }
+  ],
+  "hint": "Frame attention fills only the diagonal blocks, global attention fills the whole table. Paper Tab. 5: at the same parameter count, alternating attention has the lowest error."
+ },
+ {
+  "id": "p1.8",
+  "t0": 59.45,
+  "t1": 69.35,
+  "on_screen": "After 24 rounds the camera token → camera head → 9 numbers: 3 translation + 4 quaternion + 2 FoV.",
+  "why": "Answers how a camera comes out of tokens.",
+  "key_points": [
+   "24 alternating rounds, then read the camera token.",
+   "9 = 3 + 4 + 2, concatenated (slot order as in the official code)."
+  ],
+  "text": "For the camera, we take the camera token. The camera head outputs 9 numbers: translation, rotation, field of view.",
+  "words": 19,
+  "max_words": 19,
+  "tts": "For the camera, we take the camera token. The camera head outputs nine numbers: translation, rotation, field of view.",
+  "sentences": [
+   {
+    "text": "For the camera, we take the camera token.",
+    "tts": "For the camera, we take the camera token.",
+    "words": 8,
+    "anchor": 59.45
+   },
+   {
+    "text": "The camera head outputs 9 numbers: translation, rotation, field of view.",
+    "tts": "The camera head outputs nine numbers: translation, rotation, field of view.",
+    "words": 11,
+    "anchor": 61.95
+   }
+  ],
+  "hint": "After 24 rounds of alternating attention, take the camera token; the camera head outputs 9 numbers: translation 3 + quaternion 4 (the rotation) + field of view 2. Slots on screen follow the official code's order."
+ },
+ {
+  "id": "p1.9",
+  "t0": 69.35,
+  "t1": 76.55,
+  "on_screen": "Patch tokens → DPT heads → per-pixel maps; DPT reads 4 of the 24 rounds.",
+  "why": "The camera came from one token; dense maps come from the patch tokens.",
+  "key_points": [
+   "DPT reads 4 of the 24 rounds.",
+   "Output: a per-pixel map (depth, points)."
+  ],
+  "text": "For per-pixel maps, the patch tokens go to DPT heads instead.",
+  "words": 13,
+  "max_words": 14,
+  "tts": "For per-pixel maps, the patch tokens go to DPT heads instead.",
+  "sentences": [
+   {
+    "text": "For per-pixel maps, the patch tokens go to DPT heads instead.",
+    "tts": "For per-pixel maps, the patch tokens go to DPT heads instead.",
+    "words": 13,
+    "anchor": 69.35
+   }
+  ],
+  "hint": "Per-pixel maps (depth, point map) go patch tokens → DPT heads; DPT reads 4 of the 24 rounds."
+ },
+ {
+  "id": "p1.10",
+  "t0": 76.55,
+  "t1": 88.95,
+  "on_screen": "Two routes to points: Method A point head; Method B depth + camera, unproject; paper Tab. 3 (ETH3D).",
+  "why": "VGGT gives points twice, so which one do we use?",
+  "key_points": [
+   "Paper Tab. 3 (ETH3D): Method B has lower error.",
+   "Authors' view: subtasks are easier to learn (not tested separately in the paper)."
+  ],
+  "text": "Method A reads the point map. Method B unprojects depth with the camera. In Table 3 of the paper, B has lower error.",
+  "words": 23,
+  "max_words": 24,
+  "tts": "Method A reads the point map. Method B unprojects depth with the camera. In Table three of the paper, B has lower error.",
+  "sentences": [
+   {
+    "text": "Method A reads the point map.",
+    "tts": "Method A reads the point map.",
+    "words": 6,
+    "anchor": 76.55
+   },
+   {
+    "text": "Method B unprojects depth with the camera.",
+    "tts": "Method B unprojects depth with the camera.",
+    "words": 7,
+    "anchor": 78.75
+   },
+   {
+    "text": "In Table 3 of the paper, B has lower error.",
+    "tts": "In Table three of the paper, B has lower error.",
+    "words": 10,
+    "anchor": 83.35
+   }
+  ],
+  "hint": "Two routes: A uses the point map directly, B unprojects depth + camera. Paper Tab. 3 (ETH3D): B has lower error; \"subtasks are easier to learn\" is the authors' view, not tested separately in the paper."
+ },
+ {
+  "id": "p1.11",
+  "t0": 88.95,
+  "t1": 97.15,
+  "on_screen": "Training divides ground truth by its mean distance s → no meters; a scaled scene gives identical images.",
+  "why": "This is the gap Part 2 picks up: MapAnything outputs meters.",
+  "key_points": [
+   "VGGT §3.4: ground truth normalized by its mean distance s.",
+   "Scale the scene and the cameras together: the images don't change."
+  ],
+  "text": "Training divides ground truth by its mean distance, so the output has no meters. Scaling the scene and the cameras together gives the same images.",
+  "words": 25,
+  "max_words": 16,
+  "tts": "Training divides ground truth by its mean distance, so the output has no meters. Scaling the scene and the cameras together gives the same images.",
+  "sentences": [
+   {
+    "text": "Training divides ground truth by its mean distance,",
+    "tts": "Training divides ground truth by its mean distance,",
+    "words": 8,
+    "anchor": 88.95
+   },
+   {
+    "text": "so the output has no meters.",
+    "tts": "so the output has no meters.",
+    "words": 6,
+    "anchor": 91.75
+   },
+   {
+    "text": "Scaling the scene and the cameras together gives the same images.",
+    "tts": "Scaling the scene and the cameras together gives the same images.",
+    "words": 11,
+    "anchor": 94.35
+   }
+  ],
+  "hint": "VGGT training divides ground truth by the mean distance s, so the output has no meters; scale the scene and cameras together and the images do not change. This is the gap MapAnything fills in Part 2."
+ },
+ {
+  "id": "c2",
+  "t0": 97.15,
+  "t1": 99.15,
+  "on_screen": "Part 2 card: How MapAnything works (Keetha et al., arXiv 2509.13414).",
+  "why": "Part 2 is MapAnything's design, set against VGGT.",
+  "key_points": [
+   "Keetha et al., arXiv 2509.13414."
+  ],
+  "text": "Next, MapAnything.",
+  "words": 3,
+  "max_words": 3,
+  "tts": "Next, MapAnything.",
+  "sentences": [
+   {
+    "text": "Next, MapAnything.",
+    "tts": "Next, MapAnything.",
+    "words": 3,
+    "anchor": 97.15
+   }
+  ],
+  "hint": "Part 2: MapAnything, the paper this talk is about."
+ },
+ {
+  "id": "p2.1",
+  "t0": 99.15,
+  "t1": 109.45,
+  "on_screen": "One point = four factors; ray = the pixel's unit direction; all rays = the intrinsics.",
+  "why": "MapAnything's change starts with the output format.",
+  "key_points": [
+   "All rays of an image = its intrinsics.",
+   "Values here are illustrations computed from the scene's ground truth."
+  ],
+  "text": "MapAnything changes the output format. It splits each point into four factors. First, a unit ray for each pixel. All the rays together are the intrinsics.",
+  "words": 27,
+  "max_words": 20,
+  "tts": "MapAnything changes the output format. It splits each point into four factors. First, a unit ray for each pixel. All the rays together are the intrinsics.",
+  "sentences": [
+   {
+    "text": "MapAnything changes the output format.",
+    "tts": "MapAnything changes the output format.",
+    "words": 6,
+    "anchor": 99.15
+   },
+   {
+    "text": "It splits each point into four factors.",
+    "tts": "It splits each point into four factors.",
+    "words": 7,
+    "anchor": 101.65
+   },
+   {
+    "text": "First, a unit ray for each pixel.",
+    "tts": "First, a unit ray for each pixel.",
+    "words": 7,
+    "anchor": 104.25
+   },
+   {
+    "text": "All the rays together are the intrinsics.",
+    "tts": "All the rays together are the intrinsics.",
+    "words": 7,
+    "anchor": 106.85
+   }
+  ],
+  "hint": "MapAnything splits a 3D point into four factors; the first is each pixel's unit ray, and all the rays of an image together are the intrinsics."
+ },
+ {
+  "id": "p2.2",
+  "t0": 109.45,
+  "t1": 120.05,
+  "on_screen": "Ray depth: distance along the ray, up to scale; ray × depth → point in camera 2's frame; pose O, T → camera 1's frame.",
+  "why": "Shows how the factors assemble into a point.",
+  "key_points": [
+   "Depth is measured along the ray, up to scale.",
+   "Ray × depth, then the pose, gives the point in camera 1's frame."
+  ],
+  "text": "Depth runs along the ray, up to scale. Ray times depth gives a point. The pose moves it into camera one's frame.",
+  "words": 22,
+  "max_words": 21,
+  "tts": "Depth runs along the ray, up to scale. Ray times depth gives a point. The pose moves it into camera one's frame.",
+  "sentences": [
+   {
+    "text": "Depth runs along the ray, up to scale.",
+    "tts": "Depth runs along the ray, up to scale.",
+    "words": 8,
+    "anchor": 109.45
+   },
+   {
+    "text": "Ray times depth gives a point.",
+    "tts": "Ray times depth gives a point.",
+    "words": 6,
+    "anchor": 114.65
+   },
+   {
+    "text": "The pose moves it into camera one's frame.",
+    "tts": "The pose moves it into camera one's frame.",
+    "words": 8,
+    "anchor": 117.25
+   }
+  ],
+  "hint": "Depth along the ray, only up to relative scale; ray × depth gives a point in the camera frame, pose O, T moves it into camera 1's frame."
+ },
+ {
+  "id": "p2.3",
+  "t0": 120.05,
+  "t1": 130.45,
+  "on_screen": "m: one metric scale factor shared by all views; training pushes m ≈ GT ÷ output distance.",
+  "why": "m is exactly what VGGT's output lacks.",
+  "key_points": [
+   "One m shared by all views → the scene in meters.",
+   "Data with only relative scale still trains ray, depth, pose."
+  ],
+  "text": "Then m, one number for all views, scales the scene to meters. Data without meters still trains ray, depth, pose.",
+  "words": 20,
+  "max_words": 20,
+  "tts": "Then M, one number for all views, scales the scene to meters. Data without meters still trains ray, depth, pose.",
+  "sentences": [
+   {
+    "text": "Then m, one number for all views, scales the scene to meters.",
+    "tts": "Then M, one number for all views, scales the scene to meters.",
+    "words": 12,
+    "anchor": 120.05
+   },
+   {
+    "text": "Data without meters still trains ray, depth, pose.",
+    "tts": "Data without meters still trains ray, depth, pose.",
+    "words": 8,
+    "anchor": 127.85
+   }
+  ],
+  "hint": "m = one metric scale factor shared by the whole scene; data with only relative scale can still train ray, depth and pose."
+ },
+ {
+  "id": "p2.4",
+  "t0": 130.45,
+  "t1": 143.35,
+  "on_screen": "Optional inputs: intrinsics as rays, depth, pose; each has its own encoder → 1536-d; added to the patch tokens.",
+  "why": "The same factors can also go in as inputs.",
+  "key_points": [
+   "Each input type has its own encoder (1536-d).",
+   "Fusion: add the encodings (formula as in the paper); a missing input is simply not added."
+  ],
+  "text": "The factors can also be inputs. Intrinsics go in as rays. Each gets encoded and added to the tokens. A missing input is simply not added.",
+  "words": 26,
+  "max_words": 25,
+  "tts": "The factors can also be inputs. In-trin-sics go in as rays. Each gets encoded and added to the tokens. A missing input is simply not added.",
+  "sentences": [
+   {
+    "text": "The factors can also be inputs.",
+    "tts": "The factors can also be inputs.",
+    "words": 6,
+    "anchor": 130.45
+   },
+   {
+    "text": "Intrinsics go in as rays.",
+    "tts": "In-trin-sics go in as rays.",
+    "words": 5,
+    "anchor": 132.95
+   },
+   {
+    "text": "Each gets encoded and added to the tokens.",
+    "tts": "Each gets encoded and added to the tokens.",
+    "words": 8,
+    "anchor": 135.55
+   },
+   {
+    "text": "A missing input is simply not added.",
+    "tts": "A missing input is simply not added.",
+    "words": 7,
+    "anchor": 140.75
+   }
+  ],
+  "hint": "Optional inputs: intrinsics (as rays), depth and pose can all be fed in; each has its own encoder to 1536-d and is added to the patch tokens; a missing input is not added."
+ },
+ {
+  "id": "p2.5",
+  "t0": 143.35,
+  "t1": 156.35,
+  "on_screen": "View 1 gets a fixed embedding; one scale token is appended, joins only the global layers, sees all views; MLP + exp → m.",
+  "why": "Answers where m comes from.",
+  "key_points": [
+   "The scale token joins only the global layers, so it sees all views.",
+   "MLP, then exp → m."
+  ],
+  "text": "View one gets a fixed embedding. The scale m comes from one scale token, which joins only the global layers, so it sees every view. An MLP and an exponential turn it into m.",
+  "words": 35,
+  "max_words": 26,
+  "tts": "View one gets a fixed embedding. The scale M comes from one scale token, which joins only the global layers, so it sees every view. An MLP and an exponential turn it into M.",
+  "sentences": [
+   {
+    "text": "View one gets a fixed embedding.",
+    "tts": "View one gets a fixed embedding.",
+    "words": 6,
+    "anchor": 143.35
+   },
+   {
+    "text": "The scale m comes from one scale token, which joins only the global layers,",
+    "tts": "The scale M comes from one scale token, which joins only the global layers,",
+    "words": 14,
+    "anchor": 145.95
+   },
+   {
+    "text": "so it sees every view.",
+    "tts": "so it sees every view.",
+    "words": 5,
+    "anchor": 151.15
+   },
+   {
+    "text": "An MLP and an exponential turn it into m.",
+    "tts": "An MLP and an exponential turn it into M.",
+    "words": 10,
+    "anchor": 153.75
+   }
+  ],
+  "hint": "Where m comes from: append a scale token that joins only the global layers, so it sees all views; finally MLP + exp gives m. View 1 gets a fixed embedding as the reference."
+ },
+ {
+  "id": "p2.6",
+  "t0": 156.35,
+  "t1": 161.75,
+  "on_screen": "Training: inputs randomly hidden → one model for any input combination.",
+  "why": "Explains how one model handles every input mix.",
+  "key_points": [
+   "Probabilities on screen are the paper's; the flickering switches are an illustration."
+  ],
+  "text": "Training hides inputs at random, so one model handles any input mix.",
+  "words": 12,
+  "max_words": 10,
+  "tts": "Training hides inputs at random, so one model handles any input mix.",
+  "sentences": [
+   {
+    "text": "Training hides inputs at random, so one model handles any input mix.",
+    "tts": "Training hides inputs at random, so one model handles any input mix.",
+    "words": 12,
+    "anchor": 156.35
+   }
+  ],
+  "hint": "Training hides inputs at random, so one model can take any combination of inputs."
+ },
+ {
+  "id": "c3",
+  "t0": 161.75,
+  "t1": 163.75,
+  "on_screen": "Part 3 card: Side by side.",
+  "why": "Puts the two designs next to each other.",
+  "key_points": [
+   "Inputs · outputs · internals · when to use."
+  ],
+  "text": "Side by side.",
+  "words": 3,
+  "max_words": 3,
+  "tts": "Side by side.",
+  "sentences": [
+   {
+    "text": "Side by side.",
+    "tts": "Side by side.",
+    "words": 3,
+    "anchor": 161.75
+   }
+  ],
+  "hint": "Part 3: the two models side by side."
+ },
+ {
+  "id": "p3.1",
+  "t0": 163.75,
+  "t1": 170.85,
+  "on_screen": "Same images into both; VGGT needs only images; MapAnything can also take known geometry.",
+  "why": "Inputs are the first difference.",
+  "key_points": [
+   "MapAnything can also take known geometry: intrinsics, depth, pose."
+  ],
+  "text": "For input, VGGT takes images only. MapAnything also takes known geometry.",
+  "words": 13,
+  "max_words": 14,
+  "tts": "For input, V G G T takes images only. MapAnything also takes known geometry.",
+  "sentences": [
+   {
+    "text": "For input, VGGT takes images only.",
+    "tts": "For input, V G G T takes images only.",
+    "words": 7,
+    "anchor": 163.75
+   },
+   {
+    "text": "MapAnything also takes known geometry.",
+    "tts": "MapAnything also takes known geometry.",
+    "words": 6,
+    "anchor": 168.45
+   }
+  ],
+  "hint": "Input: VGGT needs only images; MapAnything can also take known geometry (intrinsics, depth, pose)."
+ },
+ {
+  "id": "p3.2",
+  "t0": 170.85,
+  "t1": 182.65,
+  "on_screen": "Outputs: VGGT camera, depth, point map (points twice); MapAnything four factors; units: mean distance vs meters.",
+  "why": "Outputs and units are the second difference.",
+  "key_points": [
+   "VGGT gives points twice: P directly, or from D + g.",
+   "VGGT's unit = mean distance; MapAnything multiplies by m → meters."
+  ],
+  "text": "VGGT outputs points twice, as the point map or as depth plus camera. MapAnything outputs four factors. And only MapAnything gives meters.",
+  "words": 25,
+  "max_words": 23,
+  "tts": "V G G T outputs points twice, as the point map or as depth plus camera. MapAnything outputs four factors. And only MapAnything gives meters.",
+  "sentences": [
+   {
+    "text": "VGGT outputs points twice, as the point map or as depth plus camera.",
+    "tts": "V G G T outputs points twice, as the point map or as depth plus camera.",
+    "words": 14,
+    "anchor": 170.85
+   },
+   {
+    "text": "MapAnything outputs four factors.",
+    "tts": "MapAnything outputs four factors.",
+    "words": 5,
+    "anchor": 175.65
+   },
+   {
+    "text": "And only MapAnything gives meters.",
+    "tts": "And only MapAnything gives meters.",
+    "words": 6,
+    "anchor": 178.05
+   }
+  ],
+  "hint": "Output: VGGT gives points twice (point map, and depth + camera); MapAnything gives four factors. Units: VGGT's is the mean distance; MapAnything multiplies by m to get meters."
+ },
+ {
+  "id": "p3.3",
+  "t0": 182.65,
+  "t1": 189.85,
+  "on_screen": "Our reading: images only → either works; tracking → VGGT; calibration, pose or meters → MapAnything.",
+  "why": "Turns the comparison into a choice.",
+  "key_points": [
+   "This is our reading (marked on screen), not a claim from either paper."
+  ],
+  "text": "In our reading, with images only, either model works. For tracking, use VGGT. With calibration or poses, or to get meters, use MapAnything.",
+  "words": 25,
+  "max_words": 14,
+  "tts": "In our reading, with images only, either model works. For tracking, use V G G T. With calibration or poses, or to get meters, use MapAnything.",
+  "sentences": [
+   {
+    "text": "In our reading, with images only, either model works.",
+    "tts": "In our reading, with images only, either model works.",
+    "words": 9,
+    "anchor": 182.65
+   },
+   {
+    "text": "For tracking, use VGGT.",
+    "tts": "For tracking, use V G G T.",
+    "words": 5,
+    "anchor": 185.05
+   },
+   {
+    "text": "With calibration or poses, or to get meters, use MapAnything.",
+    "tts": "With calibration or poses, or to get meters, use MapAnything.",
+    "words": 11,
+    "anchor": 187.45
+   }
+  ],
+  "hint": "This is our reading (marked on screen): with only images either works; for point tracking pick VGGT; with calibration, poses, or a need for metric results pick MapAnything."
+ },
+ {
+  "id": "p3.4",
+  "t0": 189.85,
+  "t1": 195.05,
+  "on_screen": "MapAnything paper Tab. 2(a), two views, images only: VGGT 43.2%, MapAnything 57.5% (higher is better).",
+  "why": "The paper's own head-to-head number.",
+  "key_points": [
+   "Metric τ: share of points whose distance is within 3% of the truth (both normalized); higher is better.",
+   "VGGT is evaluated through its depth + camera route."
+  ],
+  "text": "In MapAnything's own Table 2, with images only, it scores higher.",
+  "words": 12,
+  "max_words": 10,
+  "tts": "In MapAnything's own Table two, with images only, it scores higher.",
+  "sentences": [
+   {
+    "text": "In MapAnything's own Table 2, with images only, it scores higher.",
+    "tts": "In MapAnything's own Table two, with images only, it scores higher.",
+    "words": 12,
+    "anchor": 189.85
+   }
+  ],
+  "hint": "Paper Tab. 2(a): two views, images only, τ (share of points within 3% distance error; higher is better) VGGT 43.2%, MapAnything 57.5%. Measured by the MapAnything authors themselves."
+ },
+ {
+  "id": "c4",
+  "t0": 195.05,
+  "t1": 197.05,
+  "on_screen": "Part 4 card: Our own test — a toy scene we built + real model outputs; not a paper experiment.",
+  "why": "Separates our measurements from the papers' claims.",
+  "key_points": [
+   "From here on: our own test, not a paper experiment."
+  ],
+  "text": "Our own test.",
+  "words": 3,
+  "max_words": 3,
+  "tts": "Our own test.",
+  "sentences": [
+   {
+    "text": "Our own test.",
+    "tts": "Our own test.",
+    "words": 3,
+    "anchor": 195.05
+   }
+  ],
+  "hint": "Part 4: our own test, not a paper experiment."
+ },
+ {
+  "id": "p4.1",
+  "t0": 197.05,
+  "t1": 208.55,
+  "on_screen": "Our own test: a toy scene rendered from 3 cameras, ground truth known; real VGGT-1B and MapAnything; white dot = marker point.",
+  "why": "Opens Part 4 by saying plainly that this is our own test.",
+  "key_points": [
+   "Ground truth known: cameras, depth, 3D points (3 cameras).",
+   "White dot: one marker point we follow."
+  ],
+  "text": "This is our own test, not from the papers. We rendered a toy scene with known ground truth, and ran the real models on it. The white dot is one marker point we follow.",
+  "words": 34,
+  "max_words": 23,
+  "tts": "This is our own test, not from the papers. We rendered a toy scene with known ground truth, and ran the real models on it. The white dot is one marker point we follow.",
+  "sentences": [
+   {
+    "text": "This is our own test, not from the papers.",
+    "tts": "This is our own test, not from the papers.",
+    "words": 9,
+    "anchor": 197.05
+   },
+   {
+    "text": "We rendered a toy scene with known ground truth,",
+    "tts": "We rendered a toy scene with known ground truth,",
+    "words": 9,
+    "anchor": 199.35
+   },
+   {
+    "text": "and ran the real models on it.",
+    "tts": "and ran the real models on it.",
+    "words": 7,
+    "anchor": 203.95
+   },
+   {
+    "text": "The white dot is one marker point we follow.",
+    "tts": "The white dot is one marker point we follow.",
+    "words": 9,
+    "anchor": 206.25
+   }
+  ],
+  "hint": "Say it clearly in the first sentence: this is our own test. Toy scene, three cameras, full ground truth; the models are the real VGGT-1B and MapAnything. The white dot is the marker point we follow."
+ },
+ {
+  "id": "p4.2",
+  "t0": 208.55,
+  "t1": 213.95,
+  "on_screen": "VGGT-1B depth for camera 2 (real output); second channel: confidence Σ.",
+  "why": "First real output: what VGGT's depth looks like.",
+  "key_points": [
+   "Real model output, not an illustration."
+  ],
+  "text": "This is VGGT's depth for camera two, with its confidence.",
+  "words": 11,
+  "max_words": 10,
+  "tts": "This is V G G T's depth for camera two, with its confidence.",
+  "sentences": [
+   {
+    "text": "This is VGGT's depth for camera two, with its confidence.",
+    "tts": "This is V G G T's depth for camera two, with its confidence.",
+    "words": 11,
+    "anchor": 208.55
+   }
+  ],
+  "hint": "VGGT's real depth output for camera 2; the second channel is the confidence Σ."
+ },
+ {
+  "id": "p4.3",
+  "t0": 213.95,
+  "t1": 225.15,
+  "on_screen": "White dot via Method A (point head) vs ground truth (÷ s); Method B: predicted depth 0.925, back to camera 1's frame.",
+  "why": "Runs Part 1's two routes on one real pixel.",
+  "key_points": [
+   "Method B: predicted depth 0.925 at the white dot, then back to camera 1's frame.",
+   "Ground truth is divided by s so the units match VGGT's."
+  ],
+  "text": "Method A reads the white dot off the point map. Method B unprojects the depth using the predicted camera.",
+  "words": 19,
+  "max_words": 22,
+  "tts": "Method A reads the white dot off the point map. Method B unprojects the depth using the predicted camera.",
+  "sentences": [
+   {
+    "text": "Method A reads the white dot off the point map.",
+    "tts": "Method A reads the white dot off the point map.",
+    "words": 10,
+    "anchor": 213.95
+   },
+   {
+    "text": "Method B unprojects the depth using the predicted camera.",
+    "tts": "Method B unprojects the depth using the predicted camera.",
+    "words": 9,
+    "anchor": 218.55
+   }
+  ],
+  "hint": "Follow the white dot through Part 1's two routes: A reads the point map directly; B multiplies the predicted depth 0.925 by K⁻¹[u,v,1] (a direction with z = 1, not a unit ray), then goes back to camera 1's frame. Ground truth is divided by s so the units match VGGT's."
+ },
+ {
+  "id": "p4.4",
+  "t0": 225.15,
+  "t1": 231.45,
+  "on_screen": "Per-pixel error: B lower without alignment; after aligning rotation, translation, scale: A ≈ B. Left: paper Tab. 3, right: our scene.",
+  "why": "Puts our result next to the paper's Tab. 3.",
+  "key_points": [
+   "Ours: without alignment B is lower; after rotation + translation + scale alignment A ≈ B.",
+   "Left bars = paper Tab. 3, right = our scene: different data and metric, not directly comparable."
+  ],
+  "text": "On our scene, without alignment, B has lower error. After alignment, the two are about the same.",
+  "words": 17,
+  "max_words": 12,
+  "tts": "On our scene, without alignment, B has lower error. After alignment, the two are about the same.",
+  "sentences": [
+   {
+    "text": "On our scene, without alignment, B has lower error.",
+    "tts": "On our scene, without alignment, B has lower error.",
+    "words": 9,
+    "anchor": 225.15
+   },
+   {
+    "text": "After alignment, the two are about the same.",
+    "tts": "After alignment, the two are about the same.",
+    "words": 8,
+    "anchor": 227.75
+   }
+  ],
+  "hint": "Our test scene: without alignment B has lower error; after rotation + translation + scale alignment A ≈ B. Left is paper Tab. 3, right is our scene; data and metric both differ, so the sizes cannot be compared directly."
+ },
+ {
+  "id": "p4.5",
+  "t0": 231.45,
+  "t1": 241.35,
+  "on_screen": "VGGT point-head mean distance 1.001 (not meters); MapAnything metric scale off 72% (images only) → 9.5% (with intrinsics + metric pose).",
+  "why": "Closes the loop on meters from Parts 1 and 2.",
+  "key_points": [
+   "VGGT: mean distance 1.001, normalized units, not meters.",
+   "MapAnything: 72% → 9.5% when given intrinsics + metric poses."
+  ],
+  "text": "VGGT's points are not in meters. With images only, MapAnything's scale is 72% off. With intrinsics and metric poses, it is 9.5% off.",
+  "words": 30,
+  "max_words": 19,
+  "tts": "V G G T's points are not in meters. With images only, MapAnything's scale is seventy-two percent off. With intrinsics and metric poses, it is nine point five percent off.",
+  "sentences": [
+   {
+    "text": "VGGT's points are not in meters.",
+    "tts": "V G G T's points are not in meters.",
+    "words": 7,
+    "anchor": 231.45
+   },
+   {
+    "text": "With images only, MapAnything's scale is 72% off.",
+    "tts": "With images only, MapAnything's scale is seventy-two percent off.",
+    "words": 11,
+    "anchor": 234.45
+   },
+   {
+    "text": "With intrinsics and metric poses, it is 9.5% off.",
+    "tts": "With intrinsics and metric poses, it is nine point five percent off.",
+    "words": 12,
+    "anchor": 236.65
+   }
+  ],
+  "hold_end_s": 2.5,
+  "hint": "The mean distance of VGGT's points is 1.001, in normalized units, not meters; MapAnything with images only is off by 72% in metric scale, 9.5% with intrinsics + metric pose. In the voiced cut, the film holds at least 2.0 s after the last word."
+ }
+]

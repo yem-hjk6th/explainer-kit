@@ -1,0 +1,37 @@
+[
+ {"id": "S04", "title": "04 Alternating attention", "window": 13.1, "shot_s": 34, "caps": 13, "covered": 5,
+  "lines": [
+  "In frame-wise attention, the stacked tokens have shape 3 by 1374 by 1024, so each image attends only to its own 1374 tokens.",
+  "For global attention, we reshape: the three rows are concatenated into one long sequence.",
+  "Now every token can attend to every other token, across all three images.",
+  "The shape becomes 1 by 4122 by 1024, and 4122 is simply 3 times 1374.",
+  "Take the white point's token: it has index 799 in the second image, so its new position is 1 times 1374 plus 799, which is 2173."],
+  "tts": [
+  "In frame-wise attention, the stacked tokens have shape three by thirteen seventy-four by ten twenty-four, so each image attends only to its own thirteen seventy-four tokens.",
+  "For global attention, we reshape: the three rows are concatenated into one long sequence.",
+  "Now every token can attend to every other token, across all three images.",
+  "The shape becomes one by forty-one twenty-two by ten twenty-four, and forty-one twenty-two is simply three times thirteen seventy-four.",
+  "Take the white point's token: it has index seven ninety-nine in the second image, so its new position is one times thirteen seventy-four plus seven ninety-nine, which is twenty-one seventy-three."]},
+ {"id": "S05", "title": "05 Nine camera numbers", "window": 10.7, "shot_s": 24, "caps": 9, "covered": 4,
+  "lines": [
+  "After 24 rounds, the camera head reads out the camera token as nine numbers.",
+  "The first four are a quaternion q, which encodes the rotation.",
+  "The next three are the translation t, and the last two are the field of view, in radians.",
+  "A 60 degree field of view on a 518 pixel image gives a focal length of 259 over tan 30 degrees, which is 448.6 pixels."],
+  "tts": [
+  "After twenty-four rounds, the camera head reads out the camera token as nine numbers.",
+  "The first four are a quaternion q, which encodes the rotation.",
+  "The next three are the translation t, and the last two are the field of view, in radians.",
+  "A sixty degree field of view on a five eighteen pixel image gives a focal length of two fifty-nine over tan thirty degrees, which is four hundred forty-eight point six pixels."]},
+ {"id": "S06", "title": "06 Comparing two methods", "window": 9.8, "shot_s": 22, "caps": 9, "covered": 4,
+  "lines": [
+  "Route two starts from depth and camera. First, multiply K inverse by u, v, 1 to get the viewing ray of this pixel.",
+  "Scale that ray by the depth, 1.975 meters, and we get the point in camera 2's frame.",
+  "Then subtract t and multiply by R transpose to move it into camera 1's frame.",
+  "In Table 3, this route reaches a Chamfer distance of 0.677, lower than the direct point head at 0.709, and lower is better."],
+  "tts": [
+  "Route two starts from depth and camera. First, multiply K inverse by u, v, one to get the viewing ray of this pixel.",
+  "Scale that ray by the depth, one point nine seven five meters, and we get the point in camera two's frame.",
+  "Then subtract t and multiply by R transpose to move it into camera one's frame.",
+  "In Table three, this route reaches a Chamfer distance of zero point six seven seven, lower than the direct point head at zero point seven zero nine, and lower is better."]}
+]

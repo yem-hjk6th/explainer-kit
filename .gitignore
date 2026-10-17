@@ -1,0 +1,27 @@
+# machine-specific config (make it with tools/setup_config.py)
+config/animkit.json
+# caches and outputs
+.cache/
+__pycache__/
+*.pyc
+render/
+_collect/
+_parts*/
+_scratch/
+_moved/
+_logs/
+_check/
+# media, model outputs, weights, third-party code
+*.mp4
+*.wav
+*.mp3
+*.npz
+*.npy
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+third_party/
+refs_dl/
+refs/
+weights/

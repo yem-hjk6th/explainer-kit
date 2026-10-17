@@ -1,0 +1,16 @@
+{
+  "model": "facebook/VGGT-1B",
+  "code": "facebookresearch/vggt a288dd0",
+  "dtype": "torch.bfloat16",
+  "n_frames": 3,
+  "image_hw": [
+    518,
+    518
+  ],
+  "load_s": 8.43,
+  "forward_s": 1.482,
+  "peak_alloc_gib": 7.432,
+  "gpu": "GPU",
+  "torch": "2.11.0+cu128",
+  "time": null
+}
